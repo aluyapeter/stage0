@@ -28,18 +28,17 @@ pip install -r requirements.txt
 ```
 
 # 2️⃣ Create .env
-env
-Copy code
+.env
 EMAIL=yourname@example.com
-NAME=Your Full Name
+NAME=Full Name
 STACK=Python/FastAPI
 CATFACT_URL=https://catfact.ninja/fact
 EXTERNAL_TIMEOUT=5.0
 
 # 3️⃣ Start the server
-bash
-Copy code
+```
 uvicorn app.main:app --reload
+```
 Visit: http://127.0.0.1:8000/me
 
 # ✅ Tests
