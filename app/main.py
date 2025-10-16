@@ -14,6 +14,13 @@ logger = logging.getLogger("stage0")
 
 app = FastAPI(title="Stage0")
 
+# CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["GET"],
+    allow_headers=["*"],
+)
 
 
 def utc_iso_now() -> str:
@@ -21,6 +28,10 @@ def utc_iso_now() -> str:
     now = datetime.now(timezone.utc)
     iso = now.isoformat(timespec="milliseconds")
     return iso.replace("+00:00", "Z")
+
+@app.get("/")
+async def root():
+    return {"message": "Welcome to Stage0!"}
 
 @app.get("/me")
 async def get_profile():
