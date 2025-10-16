@@ -13,6 +13,7 @@ This is my HNG Stage 0 backend task. The goal was to build a `/me` endpoint retu
 - FastAPI
 - HTTPX (for async HTTP calls)
 - Pydantic v2 + pydantic-settings (for env management)
+- Slowapi (for rate limiting)
 
 ---
 
@@ -27,15 +28,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-# 2️⃣ Create .env
-.env
-EMAIL=yourname@example.com
-NAME=Full Name
-STACK=Python/FastAPI
-CATFACT_URL=https://catfact.ninja/fact
-EXTERNAL_TIMEOUT=5.0
-
-# 3️⃣ Start the server
+# 2️⃣ Start the server
 ```
 uvicorn app.main:app --reload
 ```
